@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
-import { RecipeAPIService } from '../shared/services/recipe-api/recipe-api.service';
+import { RecipeAPIService } from '../shared/services/recipe-api.service';
 import { map, merge, of, shareReplay, startWith, switchMap, tap } from 'rxjs';
-import { normalizeRecipe } from '../shared/services/recipe-api/utility';
+import { normalizeRecipe } from '../shared/services/utility';
 @Injectable({
   providedIn: 'root',
 })
