@@ -1,0 +1,32 @@
+:host {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  ::ng-deep {
+    .recipe-thumbnail {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .p-card {
+      max-width: 600px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .p-card-body h2 {
+      margin-bottom: 1rem;
+    }
+
+    .p-card-footer {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  // #recipe-detail {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+}

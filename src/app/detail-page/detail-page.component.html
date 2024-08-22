@@ -1,1 +1,24 @@
-<p>detail-page works!</p>
+<div class="p-card" *ngIf="details$ | async as recipe" id="recipe-detail">
+  <div class="p-card-header">
+    <img [src]="recipe.thumbnail" alt="{{ recipe.name }}" class="recipe-thumbnail" />
+  </div>
+  <div class="p-card-body">
+    <h2>{{ recipe.name }}</h2>
+    <p><strong>Category:</strong> {{ recipe.category }}</p>
+    <p><strong>Area:</strong> {{ recipe.area }}</p>
+    <h3>Ingredients</h3>
+    <ul>
+      <li *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.ingredient }} - {{ ingredient.measure }}
+      </li>
+    </ul>
+    <h3>Instructions</h3>
+    <p>{{ recipe.instructions }}</p>
+  </div>
+  <div class="p-card-footer">
+    <button *ngIf="recipe.youtube" pButton type="button" label="Watch on YouTube" icon="pi pi-youtube"
+      (click)="openLink(recipe.youtube)"></button>
+    <button *ngIf="recipe.source" pButton type="button" label="View Source" icon="pi pi-link"
+      (click)="openLink(recipe.source)"></button>
+  </div>
+</div>
