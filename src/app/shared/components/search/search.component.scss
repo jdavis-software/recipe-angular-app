@@ -1,0 +1,9 @@
+:host {
+  ::ng-deep {
+    .p-inputtext {
+      height: 40px;
+      min-width: 400px;
+      text-align: center;
+    }
+  }
+}
