@@ -1,1 +1,25 @@
-<p>home-page works!</p>
+<!-- display categories -->
+<div id="category-chips-container" *ngIf="categories$ | async as categories">
+  <div *ngFor="let category of categories">
+    <p-chip [label]="category.name" (click)="onHandleCategoryClick(category.name)"></p-chip>
+  </div>
+</div>
+<hr />
+
+<!-- Display recipeList$ when available, otherwise show featuredRecipes$ -->
+<div *ngIf="(recipeList$ | async) as recipes;">
+  <div ngClass="recipes-container">
+    <div *ngFor="let recipe of recipes">
+      <p-card [header]="recipe.name" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+          <img [src]="recipe.thumbnail" alt="{{ recipe.name }}">
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <div class="flex gap-3 mt-1">
+            <p-button label="View Details" class="w-full" (click)="onHandleRecipeClick(recipe.id)" />
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>
