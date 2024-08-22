@@ -7,8 +7,6 @@ import {
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
@@ -16,7 +14,7 @@ import { InputTextModule } from 'primeng/inputtext';
   standalone: true,
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, InputTextModule], // Import necessary Angular Material modules
+  imports: [CommonModule, InputTextModule],
 })
 export class SearchComponent {
   @Output() search = new EventEmitter<string>();
